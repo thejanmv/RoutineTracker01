@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -10,11 +11,15 @@ android {
     defaultConfig {
         applicationId = "com.example.routinetracker01"
         minSdk = 33
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -45,4 +50,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+    implementation(platform(libs.firebase.bom))
+
+    implementation (libs.firebase.firestore)
+    implementation(libs.firebase.analytics)
+
 }
+
+
+//apply(plugin = "com.google.gms.google-services")

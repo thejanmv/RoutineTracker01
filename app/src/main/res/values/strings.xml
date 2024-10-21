@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RoutineTracker01</string>
+    <string name="update_routine">Update Routine</string>
+    <string name="delete_routine">Delete Routine</string>
 </resources>
